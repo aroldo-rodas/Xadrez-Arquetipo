@@ -1,8 +1,5 @@
 package xadrez;
 
-import java.awt.Color;
-
-import boardgame.Posicao;
 import boardgame.Tabuleiro;
 import pecas.Rei;
 import pecas.Torre;
@@ -31,9 +28,13 @@ public class PartidaXadez {
         return matriz;
     }
 
+    private void colocarNovaPeca(char coluna, int linha, PecaXadrez peca) {
+        tabuleiro.posicaoPeca(peca, new PecaPosicao(coluna, linha).toPosition());
+    }
+
     private void iniciarPartida() {
-        tabuleiro.posicaoPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(2, 1));
-        tabuleiro.posicaoPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(0, 4));
-        tabuleiro.posicaoPeca(new Rei(tabuleiro, Cor.BRANCO), new Posicao(7, 4));
+        colocarNovaPeca('b', 6, new Torre(tabuleiro, Cor.BRANCO));
+        colocarNovaPeca('e', 8, new Rei(tabuleiro, Cor.PRETO));
+        colocarNovaPeca('e', 1, new Rei(tabuleiro, Cor.BRANCO));
     }
 }

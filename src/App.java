@@ -1,5 +1,3 @@
-import boardgame.Posicao;
-import boardgame.Tabuleiro;
 import xadrez.PartidaXadez;
 
 public class App {

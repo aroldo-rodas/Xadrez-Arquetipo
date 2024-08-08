@@ -1,5 +1,6 @@
 package boardgame;
 
+
 public class Tabuleiro {
     //Atributos
     private int linhas;
@@ -46,6 +47,20 @@ public class Tabuleiro {
         }
         pecas[posicao.getLinha()][posicao.getColuna()] = peca;
         peca.posicao = posicao;
+    }
+
+    public Peca removePeca(Posicao posicao) {
+        if(!posicaoExite(posicao)) {
+            throw new BoardExceptions("Posição inválida!");
+        }
+        if(peca(posicao) == null) {
+            return null;
+        }
+
+        Peca aux = peca(posicao);
+        aux.posicao = null;
+        pecas[posicao.getLinha()][posicao.getColuna()] = null;
+        return aux;
     }
 
     private boolean posicaoExite(int linha, int coluna) {

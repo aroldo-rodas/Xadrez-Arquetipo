@@ -1,6 +1,17 @@
+import java.util.Scanner;
+import xadrez.PecaPosicao;
 import xadrez.PecaXadrez;
 
 public class UI {
+
+    //Lê posição
+    public static PecaPosicao lePosicaoPeca(Scanner sc) {
+        String s = sc.nextLine();
+        char coluna = s.charAt(0);
+        int linha =  Integer.parseInt(s.substring(1));
+        return new PecaPosicao(coluna, linha);
+    }
+
     //Imprime o tabuleiro
     public static void printTabuleiro(PecaXadrez[][] pecas) {
         for(int i = 0; i < pecas.length; i++) {

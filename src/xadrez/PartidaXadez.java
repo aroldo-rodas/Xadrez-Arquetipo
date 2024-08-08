@@ -1,6 +1,11 @@
 package xadrez;
 
+import java.awt.Color;
+
+import boardgame.Posicao;
 import boardgame.Tabuleiro;
+import pecas.Rei;
+import pecas.Torre;
 
 public class PartidaXadez {
     //Atributos
@@ -9,6 +14,7 @@ public class PartidaXadez {
     //Construtor
     public PartidaXadez() {
         this.tabuleiro = new Tabuleiro(8, 8);
+        iniciarPartida();
     }
 
     //Métodos
@@ -25,4 +31,9 @@ public class PartidaXadez {
         return matriz;
     }
 
+    private void iniciarPartida() {
+        tabuleiro.posicaoPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(2, 1));
+        tabuleiro.posicaoPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(0, 4));
+        tabuleiro.posicaoPeca(new Rei(tabuleiro, Cor.BRANCO), new Posicao(7, 4));
+    }
 }

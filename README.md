@@ -1,2 +1,3 @@
 # Xadrez
-Projeto que desenvolve um jogo de xadrez.
+Projeto que desenvolve o arquetipo de um jogo de xadrez.
+(Está encerrado)
